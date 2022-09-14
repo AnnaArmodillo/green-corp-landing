@@ -3,6 +3,10 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    position: sticky;
+    background: white;
+    top: 0;
+    z-index: 1;
 }
 
 body {
@@ -41,6 +45,11 @@ button {
 .about__sun-image {
     width: 100px;
     height: 100px;
+    position: absolute;
+    animation-name: rotation;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
 .about__image {
@@ -99,7 +108,6 @@ button {
     font-size: 48px;
 }
     
-
 .form p {
     font-size: 18px;
     opacity: 0.65;
@@ -130,6 +138,7 @@ button {
     padding: 0 20px;
     border-radius: 15px;
     border: none;
+    outline: none;
 }
 
 .form__submit {
@@ -140,12 +149,6 @@ button {
 
 select {
     appearance: none;
-    /* выделение при выборе - убрать? */
-    outline: none;
-  }
-
-  input {
-    outline: none;
   }
 
   button:hover {
@@ -168,6 +171,7 @@ select {
   .footer__copyright {
     text-align: center;
     opacity: 0.5;
+    margin-top: 40px;
   }
 
   .footer__group {
@@ -188,3 +192,73 @@ select {
   .footer__links a {
     margin-bottom: 15px;
   }
+
+  .animate__animated {
+    animation-duration: 2s;
+  }
+
+ @keyframes rotation {
+    0% {
+        transform: rotate(0);
+      }
+    100% {
+        transform: rotate(360deg);
+      }   
+ }
+
+ @media (max-width: 1024px) {
+    .about {
+        padding: 115px 20px;
+    }
+    .about h1 {
+        font-size: 36px;
+        line-height: 40px;
+    }
+    .about__image {
+        width: 280px;
+    }
+    .about__sun-image {
+        width: 75px;
+        height: 75px;
+    }
+ }
+
+ @media (max-width: 720px) {
+    header {
+        padding: 10px;        
+    }
+    .header__logo {
+        height: 20px;
+    }
+    .about__image {
+        width: 280px;
+    }
+    .about__sun-image {
+        width: 75px;
+        height: 75px;
+    }
+    footer {
+      padding: 50px 10px;
+    }
+    .about h1 {
+        font-size: 36px;
+        line-height: 40px;
+    }
+    .about {
+        flex-direction: column-reverse;
+        padding: 50px 10px;
+    }
+    header a {
+        margin-right: 10px;
+    }
+    .form {
+        padding: 50px 10px;
+    }
+    .footer__container {
+        flex-direction: column;
+    }
+    .form h1 {
+        font-size: 36px;
+    }
+}
+
