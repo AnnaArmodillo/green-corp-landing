@@ -18,10 +18,7 @@ class Bubble {
     }
   
     init() {
-        this.color = COLORS[getRandomInt(COLORS.length)];
-        function getRandomInt(max) {
-            return Math.floor(Math.random() * max);
-          }
+        this.color = COLORS[Math.floor(generateDecimalBetween(0, COLORS.length))];
         this.size = generateDecimalBetween(1, 3);
         this.alpha = generateDecimalBetween(5, 10) / 10;
         this.translateX = generateDecimalBetween(0, this.canvasWidth);
